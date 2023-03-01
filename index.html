@@ -6,12 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio 20</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-        <style>
-            .colapsar{
-                display: none;
-            }
-
-        </style>
+        
     </head>
     <body>
         <nav class="bg-dark d-flex justify-content-between">
@@ -71,8 +66,8 @@
                 </div>
             
             
-            <div class="colapsar">
-                <div class="row mt3 colapsar">
+            <div class="collapse">
+                <div class="row mt3">
                     <div class="col-sm-4">
                         <div class="cards">
                             <div class="card-body">
@@ -87,11 +82,7 @@
         </section>
         <section class="container mt-3">
             <div class="row">
-                <button class="btn btn-primary col-sm-12" type="button"
-                data-toggle="collapse" data-target=".colapsar"
-                aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">
-                    Mostrar más
-                </button>
+                <button class="btn btn-primary col-sm-12 ocultar" type="button" data-toggle="collapse" data-target=".collapse" aria-expanded="false">Mostrar más</button>
             </div>
         </section>
         <footer class="text-center bg-dark text-white pt-3 pb-3 mt-3">
@@ -100,6 +91,18 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+        <script>
+            $(document).ready(function() {
+                $('.ocultar').on('click', function(e) {
+                    var text = e.target.textContent;
+                    console.log(text, e);
+                    if (text === 'Mostrar más') {
+                        e.target.textContent = 'Mostrar menos';
+                    } else {
+                        e.target.textContent = 'Mostrar más';
+                    }
+                });
+            })
+        </script>
     </body>
 </html>
